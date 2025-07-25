@@ -25,7 +25,7 @@ func main() {
 		return
 	}
 	defer db.Close()
-
+	fmt.Println("fun")
 	rows, err := db.Query("SELECT id, product, price FROM products")
 	if err != nil {
 		log.Println(err)
