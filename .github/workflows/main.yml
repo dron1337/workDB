@@ -1,0 +1,25 @@
+name: First Interaction Welcome
+
+on:
+  issues:
+    types: [opened]  # Триггер при создании Issue
+  pull_request:
+    types: [opened]  # Триггер при создании PR
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - name: First Interaction
+        uses: actions/first-interaction@v1.3.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}  # Обязательно!
+          issue-message: |  # Сообщение для первого Issue
+            Привет, @${{ github.actor }}! 🎉  
+            Спасибо за твой первый Issue в нашем проекте!  
+            Мы рассмотрим его в ближайшее время.  
+
+          pr-message: |  # Сообщение для первого PR
+            Привет, @${{ github.actor }}! 👋  
+            Огромное спасибо за Pull Request!  
+            Наша команда проверит его и даст обратную связь.  
