@@ -41,7 +41,7 @@ func main() {
 			log.Println(err)
 			return
 		}
-
+		fmt.Println(product)
 		fmt.Println(product)
 	}
 
